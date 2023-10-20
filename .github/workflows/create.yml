@@ -1,15 +1,5 @@
 name: Terraform Apply
 
-# on:
-#   push:
-#     branches:
-#       - main 
-# on:
-#   workflow_dispatch:
-#     inputs:
-#       create:
-#         description: 'Create resources'
-#         required: true
 on:
   workflow_dispatch:
     inputs:
@@ -17,10 +7,7 @@ on:
         description: 'Deployment region'
         required: true
         default: 'ap-south-1'
-
-env:
-  AWS_REGION: ${{ inputs.region }}
-  # AWS_REGION: ap-south-1
+        
 
 jobs:
   terraform-apply:
@@ -37,7 +24,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN}}
-          aws-region: ${{ inputs.AWS_REGION }}
+          aws-region: ${{ inputs.region }}
 
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1
