@@ -1,11 +1,5 @@
 name: 'Terraform Destroy'
 
-# on:
-#   workflow_dispatch:
-#     inputs:
-#       destroy:
-#         description: 'Destroy resources'
-#         required: true
 on:
   workflow_dispatch:
     inputs:
@@ -16,7 +10,6 @@ on:
 
 env:
   AWS_REGION: ${{ inputs.region }}
-  # region: ap-south-1
   
   
 jobs:
