@@ -6,7 +6,7 @@ on:
       region:
         description: 'Deployment region'
         required: true
-        default: 'ap-south-1a'
+        # default: 'ap-south-1'
 
 env:
   AWS_REGION: ${{ inputs.region }}
