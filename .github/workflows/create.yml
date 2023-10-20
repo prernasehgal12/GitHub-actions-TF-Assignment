@@ -13,7 +13,7 @@ name: Terraform Apply
 on:
   workflow_dispatch:
     inputs:
-      aws-region:
+       region:
         description: 'Deployment region'
         required: true
         default: 'ap-south-1'
