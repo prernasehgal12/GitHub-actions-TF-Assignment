@@ -6,10 +6,6 @@ on:
        region:
         description: 'Deployment region'
         required: true
-        # default: 'us-west-1'
-
-# env:
-#   AWS_REGION: ${{ inputs.region }}
 
 jobs:
   terraform-apply:
