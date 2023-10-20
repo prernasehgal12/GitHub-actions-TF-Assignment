@@ -4,14 +4,23 @@ name: Terraform Apply
 #   push:
 #     branches:
 #       - main 
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       create:
+#         description: 'Create resources'
+#         required: true
 on:
   workflow_dispatch:
     inputs:
-      create:
-        description: 'Create resources'
+      region:
+        description: 'Deployment region'
         required: true
+        default: 'ap-south-1'
+
 env:
-  AWS_REGION: ap-south-1
+  TF_VAR_region: ${{ inputs.region }}
+  # AWS_REGION: ap-south-1
 
 jobs:
   terraform-apply:
